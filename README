@@ -1,0 +1,42 @@
+=====================================================
+    🚀 SISTEM DE CHAT SECURIZAT CU GEMINI AI 🚀
+=====================================================
+
+1. DESCRIERE PROIECT
+--------------------
+Acesta este un sistem Client-Server multithreaded, scris în C, 
+care permite comunicarea securizată (SSL/TLS) cu modelul 
+Gemini AI de la Google.
+
+2. COMPONENTE PRINCIPALE
+------------------------
+* server.c  - Gestionează clienții, logările și apelurile API.
+* client.c  - Interfața utilizatorului (TUI) cu typing effect.
+* Makefile  - Automatizarea procesului de compilare.
+* SSL Certs - server.crt și server.key pentru criptare.
+
+3. TEHNOLOGII UTILIZATE
+-----------------------
+* OpenSSL (v1.1.1+) -> Pentru criptarea traficului.
+* Pthreads          -> Pentru gestionarea mai multor clienți.
+* Libcurl / popen   -> Pentru comunicarea cu Google API.
+* Mutex             -> Pentru sincronizarea Wait List (Coadă).
+
+4. CUM SE RULEAZĂ?
+------------------
+Pasul 1: Compilarea
+   $ make
+
+Pasul 2: Pornirea Serverului (într-un terminal)
+   $ ./server
+
+Pasul 3: Pornirea Clientului (în alt terminal)
+   $ ./client
+
+5. FUNCȚIONALITĂȚI SPECIALE
+---------------------------
+* WAIT LIST: Serverul pune clienții la coadă pentru a evita
+             erorile de la Google și a garanta răspunsuri lungi.
+* TYPING EFFECT: Răspunsul AI-ului apare literă cu literă.
+* LOGGING: Toate conversațiile sunt salvate în chat_history.log.
+=====================================================

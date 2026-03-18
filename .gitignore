@@ -1,0 +1,15 @@
+# Executabile
+server
+client
+a.out
+
+# Fișiere reziduale de care ziceai
+fd
+len
+ptr*
+ssl
+
+# Log-uri (nu vrei să urci istoricul tău de chat)
+*.log
+server.crt
+server.key
